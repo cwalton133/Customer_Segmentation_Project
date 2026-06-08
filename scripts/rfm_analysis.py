@@ -67,3 +67,15 @@ rfm["R_Score"] = pd.qcut(
     5,
     labels=[5,4,3,2,1]
 )
+
+# Step 3: Create Monetary Score
+rfm["M_Score"] = pd.qcut(
+    rfm["Monetary"],
+    5,
+    labels=[1,2,3,4,5]
+)
+
+# Step 4: Convert Scores to Integers
+rfm["R_Score"] = rfm["R_Score"].astype(int)
+rfm["F_Score"] = rfm["F_Score"].astype(int)
+rfm["M_Score"] = rfm["M_Score"].astype(int)
