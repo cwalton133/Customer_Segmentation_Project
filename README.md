@@ -1,64 +1,66 @@
-# 🎯 Customer Churn Prediction System (End-to-End Analytics)
+# 🎯 Customer Segmentation Using RFM Analysis (End-to-End Analytics Project)
 
-## 📊 Python, Machine Learning & Power BI Analytics Project
+## 📊 Python, Data Analytics & Tableau Project
 
 ---
 
 ## 🪄 Introduction
 
-This project delivers a complete **end-to-end churn prediction system**, transforming messy customer data into actionable insights, predictive models, and executive dashboards.
+This project delivers a complete **end-to-end customer segmentation system** using the Online Retail dataset, transforming raw transactional data into meaningful customer insights using **RFM (Recency, Frequency, Monetary) analysis**.
 
-It simulates a real-world **subscription / financial services scenario**, demonstrating how analytics can:
+It simulates a real-world retail analytics scenario, demonstrating how businesses can:
 
-- Predict customer churn
-- Identify revenue risk
-- Enable proactive retention strategies
-- Support executive decision-making
+- Identify high-value customers
+- Understand customer purchasing behavior
+- Segment customers for targeted marketing
+- Improve retention strategies
+- Support data-driven decision-making
 
 ---
 
 ## 📊 Badges
 
-![GitHub repo size](https://img.shields.io/github/repo-size/cwalton133/customer-churn-prediction-system)
-![License](https://img.shields.io/github/license/cwalton133/customer-churn-prediction-system)
-![GitHub top language](https://img.shields.io/github/languages/top/cwalton133/customer-churn-prediction-system)
+![GitHub repo size](https://img.shields.io/github/repo-size/cwalton133/online-retail-segmentation)
+![License](https://img.shields.io/github/license/cwalton133/online-retail-segmentation)
+![GitHub top language](https://img.shields.io/github/languages/top/cwalton133/online-retail-segmentation)
 
 ---
 
 ## 🧭 Business Context
 
-Customer churn directly impacts **revenue, growth, and customer lifetime value (CLV)**.
+In modern e-commerce, understanding customer behavior is essential for growth and profitability.
 
-Organizations must:
+Businesses must:
 
+- Identify valuable customers
 - Detect churn risk early
-- Understand why customers leave
-- Protect high-value segments
-- Optimize retention strategies
+- Improve customer retention
+- Optimize marketing strategies
+- Increase lifetime value (CLV)
 
-This project demonstrates how data can be leveraged to **move from reactive to proactive decision-making**.
+This project demonstrates how RFM analysis helps transform raw transactional data into **actionable business intelligence**.
 
 ---
 
 ## 🎯 Purpose of the Project
 
-To build a **scalable analytics system** that:
+To build a complete analytics pipeline that:
 
-- Predicts churn probability
-- Identifies key churn drivers
-- Quantifies **Revenue at Risk**
-- Segments customers for targeted retention
-- Provides a **Power BI dashboard for executives**
+- Cleans raw transactional data
+- Engineers customer-level features
+- Applies RFM scoring methodology
+- Segments customers into behavioral groups
+- Produces Tableau-ready datasets for visualization
 
 ---
 
 ## 📈 Expected Outcomes
 
-- Predictive churn model (Machine Learning)
-- Business-ready KPIs and metrics
-- Insight-driven dashboard
-- Data pipeline (clean → transform → model)
-- Portfolio-ready project demonstrating real-world skills
+- Cleaned and structured dataset
+- Customer-level RFM dataset
+- Behavioral customer segments
+- Revenue contribution by segment
+- Tableau dashboard for insights and storytelling
 
 ---
 
@@ -66,10 +68,11 @@ To build a **scalable analytics system** that:
 
 This dataset is used strictly for:
 
-- Learning
-- Portfolio demonstration
+- Learning purposes
+- Portfolio development
+- Educational demonstration
 
-It does not represent real customer data.
+It does not represent real customer identities.
 
 ---
 
@@ -78,12 +81,12 @@ It does not represent real customer data.
 - [Project Overview](#-project-overview)
 - [Dataset Description](#-dataset-description)
 - [Data Pipeline](#-data-pipeline)
-- [Machine Learning Model](#-machine-learning-model)
-- [Power BI Dashboard](#-power-bi-dashboard)
-- [Key KPIs](#-key-kpis)
+- [RFM Methodology](#-rfm-methodology)
+- [Customer Segmentation](#-customer-segmentation)
 - [Key Insights](#-key-insights)
-- [Strategic Recommendations](#-strategic-recommendations)
+- [Dashboard Preview](#-dashboard-preview)
 - [Tools & Technologies](#-tools--technologies)
+- [Project Structure](#-project-structure)
 - [Conclusion](#-conclusion)
 - [Author](#-author)
 
@@ -91,194 +94,233 @@ It does not represent real customer data.
 
 ## 🧭 Project Overview
 
-This project demonstrates how raw customer data can be transformed into:
+This project transforms raw e-commerce transaction data into:
 
-- Predictive intelligence
-- Business insights
-- Executive dashboards
+- Customer insights
+- Behavioral segmentation
+- Revenue contribution analysis
+- Business intelligence dashboards
 
-The focus is on **business impact, not just model accuracy**.
+The focus is on **business value extraction, not just data processing**.
 
 ---
 
 ## 🗂️ Dataset Description
 
-The dataset includes:
+The dataset contains transactions from a UK-based online retailer.
 
-- Customer demographics
-- Account details
-- Service usage
-- Financial data
-- Churn status
+Key features include:
+
+- Invoice number
+- Product stock code
+- Description
+- Quantity purchased
+- Invoice date
+- Unit price
+- Customer ID
+- Country
 
 ---
 
 ## 📄 Data Sources
 
 ### 🔹 Raw Data
-👉 [messy_churn.csv](data/raw/messy_churn.csv)
+👉 [Online Retail Dataset](https://archive.ics.uci.edu/dataset/352/online+retail)
 
 ### 🔹 Processed Data
-- 👉 [cleaned_churn.csv](data/processed/cleaned_churn.csv)  
-- 👉 [featured_churn.csv](data/processed/featured_churn.csv)  
-- 👉 [feature_importance.csv](data/processed/feature_importance.csv)
+- 👉 `data/cleaned/online_retail_clean.csv`
+- 👉 `data/rfm/customer_rfm.csv`
+- 👉 `data/final/customer_segments_final.csv`
 
 ---
 
 ## ⚙️ Data Pipeline
 
 ### 🔹 Data Cleaning
+- Removed missing Customer IDs
+- Removed cancelled transactions
 - Removed duplicates
-- Handled missing values
-- Fixed inconsistent categories
-- Created:
-  - `has_internet`
-  - `has_phone`
+- Removed invalid quantities and prices
 
 ---
 
 ### 🔹 Feature Engineering
-- Customer Lifetime Value (CLV)
-- Average Revenue
-- High Value Customers
+- Created Revenue column
+- Aggregated data at customer level
+- Built RFM metrics
+
+---
+
+## 📊 RFM Methodology
+
+RFM stands for:
+
+- **Recency** → How recently a customer purchased
+- **Frequency** → How often they purchase
+- **Monetary** → How much they spend
+
+Each customer is scored from 1–5 for each metric to identify value segments.
+
+---
+
+## 👥 Customer Segmentation
+
+Customers are grouped into behavioral segments:
+
+- Champions
 - Loyal Customers
+- Potential Loyalists
+- At Risk Customers
+- Lost Customers
+
+These segments help businesses personalize marketing strategies.
 
 ---
 
-### 🔹 Model Training
-- Random Forest Classifier
-- Feature importance extraction
-- Model saved for reuse (`model.pkl`)
+## 📸 Process Visualization
 
----
+All project steps are documented visually in the `images/` folder.
 
-## 🤖 Machine Learning Model
+### 🔹 Data Cleaning Process
 
-The model predicts churn and identifies key drivers such as:
+#### 📸 Step 01
+![Step 01](images/01.png)
 
-- Contract type
-- Tenure
-- Monthly charges
-- Customer segmentation
+#### 📸 Step 02
+![Step 02](images/02.png)
 
----
+#### 📸 Step 03
+![Step 03](images/03.png)
 
-## 📊 Power BI Dashboard
+#### 📸 Step 04
+![Step 04](images/04.png)
 
-### 🖥️ Dashboard Overview
+#### 📸 Step 05
+![Step 05](images/05.png)
 
-#### 📸 Dashboard View 1
-![Dashboard 1](dashboard/dashboard_1.png)
+#### 📸 Step 06
+![Step 06](images/06.png)
 
-#### 📸 Dashboard View 2
-![Dashboard 2](dashboard/dashboard_2.png)
+#### 📸 Step 07
+![Step 07](images/07.png)
 
+#### 📸 Step 08
+![Step 08](images/08.png)
 
-#### 📸 Dashboard View 3
-![Dashboard 1](dashboard/dashboard_3.png)
+#### 📸 Step 09
+![Step 09](images/09.png)
 
-#### 📸 Dashboard View 4
-![Dashboard 2](dashboard/dashboard_4.png)
+#### 📸 Step 10
+![Step 10](images/10.png)
 
----
+#### 📸 Step 11
+![Step 11](images/11.png)
 
-### Dashboard Features
+#### 📸 Step 12
+![Step 12](images/12.png)
 
-- KPI Cards:
-  - Total Customers
-  - Churn Rate
-  - Revenue at Risk
-- Churn Analysis:
-  - Contract Type
-  - Tenure Groups
-- Customer Segmentation
-- High-Risk Customers Table
-- Interactive Filters
+#### 📸 Step 13
+![Step 13](images/13.png)
 
----
+#### 📸 Step 14
+![Step 14](images/14.png)
 
-## 📌 Key KPIs
+#### 📸 Step 15
+![Step 15](images/15.png)
 
-- Churn Rate
-- Revenue at Risk
-- Customer Lifetime Value (CLV)
-- Average Monthly Charges
-- Customer Segmentation Metrics
+#### 📸 RFM Analysis Final Output
+![RFM Output](images/16.png)
+
+#### 📸 Customer Segmentation Results
+![Segments](images/17.png)
+
+#### 📸 Revenue Insights
+![Revenue](images/18.png)
+
+#### 📸 Tableau Dashboard Preview
+![Dashboard](images/19.png)
+
+#### 📸 Final Storytelling View
+![Final View](images/20.png)
 
 ---
 
 ## 💡 Key Insights
 
-- Month-to-month contracts have the highest churn
-- Low-tenure customers are most at risk
-- High-value but non-loyal customers drive revenue loss
-- Service usage patterns influence retention
+- A small group of **Champions drives the majority of revenue**
+- Many customers fall into low-frequency purchase behavior
+- Strong potential exists in **Potential Loyalist segment**
+- Significant revenue is at risk from **At Risk customers**
 
 ---
 
-## 🧠 Strategic Recommendations
+## 📊 Dashboard Preview
 
-1. Target high-value, low-tenure customers  
-2. Promote long-term contracts  
-3. Improve onboarding experience  
-4. Personalize retention strategies  
-5. Monitor churn drivers continuously  
+The Tableau dashboard includes:
+
+- Executive KPI Overview
+- Customer Behavior Analysis
+- RFM Distribution Charts
+- Customer Segment Breakdown
+- Revenue Contribution by Segment
 
 ---
 
 ## 🧰 Tools & Technologies
 
-- Python (Pandas, NumPy, Scikit-learn)
-- Power BI
-- SQL (conceptual)
-- VS Code / Jupyter
+- Python (Pandas, NumPy)
+- Tableau Public
+- Jupyter Notebook / VS Code
 - Git & GitHub
 
 ---
 
 ## 🏁 Conclusion
 
-This project demonstrates how combining:
+This project demonstrates how raw transactional data can be transformed into:
 
-- Data Engineering
-- Machine Learning
-- Business Intelligence
+- Actionable business insights
+- Customer segmentation strategy
+- Data-driven marketing recommendations
+- Tableau storytelling dashboard
 
-can create a powerful system for predicting churn and enabling **data-driven decision-making**.
+It showcases a complete **end-to-end analytics workflow used in real business environments**.
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-churn_prediction_project/
+online-retail-segmentation/
 │
 ├── data/
 │   ├── raw/
-│   │   └── messy_churn.csv
-│   ├── processed/
-│       ├── cleaned_churn.csv
-│       ├── featured_churn.csv
-│       ├── feature_importance.csv
+│   │   └── Online Retail.xlsx
+│   ├── cleaned/
+│   │   └── online_retail_clean.csv
+│   ├── rfm/
+│   │   └── customer_rfm.csv
+│   ├── final/
+│       └── customer_segments_final.csv
 │
-├── src/
-│   ├── data_cleaning.py
-│   ├── feature_engineering.py
-│   ├── train_model.py
+├── scripts/
+│   ├── customer_segmentation_cleaning.py
+│   ├── rfm_analysis.py
 │
-├── dashboard/
-│   ├── dashboard_1.png
-│   ├── dashboard_2.png
-│   └── churn_dashboard.pbix
+├── images/
+│   ├── 01.png
+│   ├── 02.png
+│   ├── ...
+│   └── 20.png
 │
-├── model.pkl
+├── tableau/
+│   └── dashboard.twbx
+│
 └── README.md
 
 
+👩‍💻 Author
 
----
--This structure ensures clarity, scalability, and recruiter-friendly navigation. 
---- ## 👩‍💻 Author 
-**Charles Walton** 
-Data Analyst | Business Intelligence | Media Analytics 
+Charles Walton
+Data Analyst | Python | SQL | Tableau | Business Intelligence
 📧 cwalton1335@gmail.com
