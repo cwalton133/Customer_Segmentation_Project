@@ -60,3 +60,10 @@ print("RFM dataset saved.")
 print(rfm.head())
 
 print(rfm.describe())
+
+# Step 8: Create R Score
+rfm["R_Score"] = pd.qcut(
+    rfm["Recency"],
+    5,
+    labels=[5,4,3,2,1]
+)
